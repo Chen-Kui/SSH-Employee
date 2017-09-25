@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-14 21:51:40 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ck_ssh.employee.domain.Department" table="SSH_DEPARTMENT">
+        <id name="d_id" type="java.lang.Integer">
+            <column name="D_ID" />
+            <generator class="native" />
+        </id>
+        <property name="d_name" type="java.lang.String">
+            <column name="D_NAME" />
+        </property>
+        <property name="d_desc" type="java.lang.String">
+            <column name="D_DESC" />
+        </property>
+        <set name="employees" cascade="delete" inverse="true" >
+            <key>
+                <column name="d_no" />
+            </key>
+            <one-to-many class="com.ck_ssh.employee.domain.Employee" />
+        </set>
+    </class>
+</hibernate-mapping>

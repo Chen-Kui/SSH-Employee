@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-14 21:51:40 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ck_ssh.employee.domain.Employee" table="SSH_EMPLOYEE">
+    
+        <id name="e_id" type="java.lang.Integer">
+            <column name="E_ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="e_name" type="java.lang.String">
+            <column name="E_NAME" />
+        </property>
+        
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        
+        <property name="birthday" type="java.util.Date">
+            <column name="BIRTHDAY" />
+        </property>
+        
+        <property name="joinDate" type="java.util.Date">
+            <column name="JOINDATE" />
+        </property>
+        
+        <property name="e_no" type="java.lang.String">
+            <column name="E_NO" />
+        </property>
+        
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        
+	<!-- 映射关联关系 -->
+        <many-to-one name="department" class="com.ck_ssh.employee.domain.Department" >
+            <column name="d_no" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
